@@ -1,0 +1,31 @@
+************************uNone*******************//python face_det_image.py -i input/1.bmp
+Total faces detected: 9/28
+Average time taken for per image: 0.016 seconds.
+Average FPS: 63.993 (almost)
+
+************************upsample: 1**************//python face_det_image.py -i input/image3.jpg -u 1
+Total faces detected: 9/28
+Average time taken for per image: 0.062 seconds.
+Average FPS: 16.004 (almost)
+
+************************upsample: 2**************//python face_det_image.py -i input/image3.jpg -u 2
+Total faces detected: 8/28
+Average time taken for per image: 0.203 seconds.
+Average FPS: 4.924 (almost)
+
+************************upsample: 3**************//python face_det_image.py -i input/image3.jpg -u 3
+Total faces detected: 10/28
+Average time taken for per image: 0.828 seconds.
+Average FPS: 1.208 (almost)
+
+
+***Note:After detecting faces in images and videos using Dlib’s HOG + Linear SVM model, 
+	there are a few takeaways that we should consider.
+
+	1.Traditional face detection models only work well in simpler scenarios like 
+	when the face is almost front facing.
+	2.If the face is tilted or away from the camera, the model is not able to detect it.
+	3.Occlusions or different dressing style like turbans on the head can also lead to no 
+	detection at all.
+	4.Upsampling is useful for detection of faces, but the reduction in speed of detection 
+	is huge which makes it impractical for real-time use case.
